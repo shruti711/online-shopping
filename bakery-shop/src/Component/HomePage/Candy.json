@@ -1,0 +1,28 @@
+[
+    {
+      "image": "images/candy.jpg",
+      "title": "Professional",
+      "description": "default"
+    },
+    {
+      "image": "images/candy.jpg",
+      "title": "Letter Head",
+      "description": "letter-head"
+    },
+    {
+      "image": "images/candy.jpg",
+      "title": "Classic",
+      "description": "classic"
+    },
+    {
+      "image": "images/candy.jpg",
+      "title": "Business",
+      "description": "left-logo"
+    },
+    {
+      "image": "images/candy.jpg",
+      "title": "Print Friendly",
+      "description": "compact"
+    }
+  ]
+  

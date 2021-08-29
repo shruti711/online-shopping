@@ -1,0 +1,27 @@
+[
+  {
+    "image": "images/Chocolate.jpg",
+    "title": "Professional",
+    "description": "default"
+  },
+  {
+    "image": "images/Chocolate.jpg",
+    "title": "Letter Head",
+    "description": "letter-head"
+  },
+  {
+    "image": "images/Chocolate.jpg",
+    "title": "Classic",
+    "description": "classic"
+  },
+  {
+    "image": "images/Chocolate.jpg",
+    "title": "Business",
+    "description": "left-logo"
+  },
+  {
+    "image": "images/Chocolate.jpg",
+    "title": "Print Friendly",
+    "description": "compact"
+  }
+]
