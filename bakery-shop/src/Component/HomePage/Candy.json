@@ -1,28 +1,52 @@
-[
+  [
     {
+      "id": 13,
       "image": "images/candy.jpg",
       "title": "Professional",
-      "description": "default"
+      "name": "Blackbary",
+      "description": "default",
+      "price": 250
     },
     {
+      "id": 14,
       "image": "images/candy.jpg",
       "title": "Letter Head",
-      "description": "letter-head"
+      "description": "letter-head",
+      "name": "Chocolate",
+      "price": 239
     },
     {
+      "id": 15,
       "image": "images/candy.jpg",
       "title": "Classic",
-      "description": "classic"
+      "description": "classic",
+      "name": "Vanila",
+      "price": 300
     },
     {
+      "id": 16,
       "image": "images/candy.jpg",
       "title": "Business",
-      "description": "left-logo"
+      "description": "left-logo",
+      "name": "Strobary",
+      "price": 355
     },
     {
+      "id": 17,
       "image": "images/candy.jpg",
-      "title": "Print Friendly",
-      "description": "compact"
+      "title": "Business",
+      "description": "left-logo",
+      "name": "Strobary",
+      "price": 359
+    },
+    {
+      "id": 18,
+      "image": "images/candy.jpg",
+      "title": "Business",
+      "description": "left-logo",
+      "name": "Strobary",
+      "price": 389
     }
   ]
+  
   
