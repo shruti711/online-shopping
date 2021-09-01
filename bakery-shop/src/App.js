@@ -26,7 +26,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-              <Homepage setLoginUser={setUser}/>
+              <Homepage />
             </Route>
             <Login setLoginUser={setUser} />
           </Switch>

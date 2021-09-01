@@ -72,7 +72,7 @@ const Burger = ({ open, setOpen }) => {
     )
 }
 
-function HeaderBanner( { setLoginUser }) {
+function HeaderBanner() {
 
     const [open, setOpen] = useState(false);
 

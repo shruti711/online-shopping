@@ -166,7 +166,9 @@ function Homepage({ setLoginUser }) {
                 {selectedItem.name === 'Chocolate' && (
                     <Candy />
                 )}
-                <Cake />
+                {selectedItem.name === 'Cake' && (
+                    <Cake />
+                )}
             </>
         )
     };
@@ -226,12 +228,14 @@ function Homepage({ setLoginUser }) {
                     </CardGroup>
                 ))}
             </Card>
+            {selectedItem.name && (
             <ItemWrapper>
                 <Typography variant="body" color="textPrimary" component="h1">
-                    Recommended Items
+                    Recommended {selectedItem.name}
                 </Typography>
                 {item()}
             </ItemWrapper>
+            )}
             {cartTotal > 0 && (
                 <div onClick={() => setCheckoutItem(true)}>Cart: {cartTotal}</div>
             )}
