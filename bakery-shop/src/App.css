@@ -1,22 +1,36 @@
 .App {
-  text-align: center;
+  width: 100%;
+  height: auto;
+  min-height: 10vh;
+  padding: 0px 0px 40px;
+  display: flex;
+  -webkit-box-align: center;
+  overflow: hidden;
+  background: rgb(115, 61, 217);
+  flex-direction: column;
+}
+
+.Container {
+  max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .App-header {
-  background-color: #b8ec1a;
-  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 20px;
+  padding: 12px;
 }
 
-.App-body {
+form {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
   display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .popup {
@@ -29,15 +43,6 @@
   bottom: 0;
   margin: auto;
   background-color: white;
-}
-
-form {
-  max-width: 500px;
-  width: 100%;
-  margin: 0 auto;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
 }
 
 label,
@@ -73,4 +78,16 @@ input.error {
 
 .relativeBlock {
   position: relative;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }

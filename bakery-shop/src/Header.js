@@ -25,12 +25,18 @@ const List = styled.ul`
 
 const Menu = () => {
 
+    const [loginUser, setLoginUser] = useState();
+
     return (
         <Router>
             <div>
                 <List>
                     <li>
-                    <Link to="/login">Login</Link>
+                        {loginUser && loginUser.name ? (
+                            <button onClick={() => setLoginUser({})} >Logout</button>
+                        ) : (
+                            <Link to="/login">Login</Link>
+                        )}
                     </li>
                     <li>
                         <Link to="/about">About</Link>
@@ -41,7 +47,7 @@ const Menu = () => {
                 </List>
                 <Switch>
                     <Route path="/login">
-                        <Login />
+                        <Login setLoginUser={setLoginUser} />
                     </Route>
                     <Route path="/register">
                         <Register />
@@ -61,12 +67,12 @@ const Menu = () => {
 const Burger = ({ open, setOpen }) => {
     return (
         <button open={open} onClick={() => setOpen(!open)}>
-        Menu <i class="arrow right"></i>
+            Menu <i class="arrow right"></i>
         </button>
     )
 }
 
-function HeaderBanner() {
+function HeaderBanner( { setLoginUser }) {
 
     const [open, setOpen] = useState(false);
 

@@ -9,17 +9,13 @@ import BakeryItems from './Homepage.json';
 import CandyFlaour from './Candy.json';
 import CakeFlaour from './Cake.json';
 import BreadFlaour from './Bread.json';
-// import Cake from './Cake';
-// import Bread from './Bread';
-// import Candy from './Candy';
 
 const useStyles = makeStyles(() => ({
     root: {
         padding: 20,
         display: 'flex',
         flexWrap: 'wrap',
-        width: 1000,
-        justifyContent: 'center',
+        justifyContent: 'space-between',
     },
     media: {
         height: 100,
@@ -35,17 +31,20 @@ const CardGroup = styled.div`
 
 const ItemWrapper = styled.div`
     width: 100%;
+    margin-top: 2rem;
     background-color: #e9dede;
 `;
 
-function Homepage() {
+function Homepage({ setLoginUser }) {
     const classes = useStyles();
 
     const bakeryItems = BakeryItems;
     const [selectedItem, setSelectedItem] = useState([]);
     const [cart, setCart] = useState([]);
-    const [cartTotal, setCartTotal] = useState(0);
+    const [cartTotal, setCartTotal] = useState([]);
     const [, settotalItem] = useState(0);
+    const [checkoutItem, setCheckoutItem] = useState(false);
+    const [orderProceed, setorderProceed] = useState(false);
 
     const addToCart = (el) => {
         setCart([...cart, el]);
@@ -61,7 +60,6 @@ function Homepage() {
         total();
     }, [cart]);
 
-    
     useEffect(() => {
         totalItems();
     }, [cartTotal]);
@@ -162,16 +160,49 @@ function Homepage() {
     const item = () => {
         return (
             <>
-                {selectedItem.name === 'Cake' && (
-                    <Cake />
-                )}
                 {selectedItem.name === 'Bread' && (
                     <Bread />
                 )}
-                {selectedItem.name === 'Candy' && (
+                {selectedItem.name === 'Chocolate' && (
                     <Candy />
                 )}
+                <Cake />
             </>
+        )
+    };
+
+    const PlacedOrder = () => {
+        return (
+            <>
+                <Typography variant="body" color="textPrimary" component="p">
+                    Order is placed
+                </Typography>
+                <button onClick={() => setCheckoutItem(false)}>Cancel</button>
+            </>
+        )
+    };
+
+    const proccedToPay = () => {
+        var arr = [cartTotal];
+        var arr1 = arr;
+        arr = [];
+        cart.length = 0;
+        setCartTotal(arr);
+        setorderProceed(true);
+    };
+
+    const Checkout = () => {
+        return (
+            <div className='popup'>
+                {!orderProceed ? (
+                    <>
+                        <button onClick={() => setCheckoutItem(false)}> Continue </button>
+                        <button onClick={proccedToPay}>Procced</button>
+                    </>
+                ) : (
+                    <PlacedOrder />
+                )}
+            </div>
         )
     };
 
@@ -179,7 +210,7 @@ function Homepage() {
         <>
             <Card className={classes.root}>
                 {bakeryItems.map((t) => (
-                    <CardGroup key={t.id}>
+                    <CardGroup>
                         <CardMedia
                             key={t.id}
                             image={t.image}
@@ -194,16 +225,19 @@ function Homepage() {
                         </CardContent>
                     </CardGroup>
                 ))}
-                {selectedItem.name && (
-                    <ItemWrapper>
-                        <Typography variant="body" color="textPrimary" component="h1">
-                            Recommended {selectedItem.name}
-                        </Typography>
-                        {item()}
-                    </ItemWrapper>
-                )}
             </Card>
-            <div>Total: {cartTotal}</div>
+            <ItemWrapper>
+                <Typography variant="body" color="textPrimary" component="h1">
+                    Recommended Items
+                </Typography>
+                {item()}
+            </ItemWrapper>
+            {cartTotal > 0 && (
+                <div onClick={() => setCheckoutItem(true)}>Cart: {cartTotal}</div>
+            )}
+            {checkoutItem && (
+                <Checkout />
+            )}
         </>
     );
 };

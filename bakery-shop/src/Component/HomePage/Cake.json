@@ -1,50 +1,50 @@
 [
   {
     "id": 1,
-    "image": "images/Chocolate.jpg",
-    "title": "Professional",
-    "name": "Blackbary",
-    "description": "default",
-    "price": 250
+    "image": "images/Coffee.jpg",
+    "title": "Business",
+    "description": "Share the love with this classic coffee cake recipe.",
+    "name": "Coffee Cake",
+    "price": 305
   },
   {
     "id": 2,
     "image": "images/Chocolate.jpg",
     "title": "Letter Head",
-    "description": "letter-head",
-    "name": "Chocolate",
+    "description": "Looking for a moist and tasty chocolate birthday cake recipe? Look no further.",
+    "name": "Chocolate Cake",
     "price": 239
   },
   {
     "id": 3,
-    "image": "images/Chocolate.jpg",
+    "image": "http://img.taste.com.au/mGtmQinI/taste/2016/11/top-50-cakes-image-1-66314-1.jpg",
     "title": "Classic",
-    "description": "classic",
-    "name": "Vanila",
+    "description": "Use up over-ripe bananas to create a crowd-pleasing afternoon-tea cake.",
+    "name": "Banana Cake",
     "price": 300
   },
   {
     "id": 4,
-    "image": "images/Chocolate.jpg",
+    "image": "http://img.taste.com.au/1BL1L55J/taste/2016/11/top-50-cakes-image-29-66355-1.jpg",
     "title": "Business",
-    "description": "left-logo",
-    "name": "Strobary",
+    "description": "Float on cloud nine with our fluffy lemon coconut cake with a deliciously tangy centre",
+    "name": "Lemon coconut cake",
     "price": 355
   },
   {
-    "id": 5,
-    "image": "images/Chocolate.jpg",
-    "title": "Business",
-    "description": "left-logo",
-    "name": "Strobary",
-    "price": 305
+    "id": 1,
+    "image": "images/Black forest cake.jpg",
+    "title": "Professional",
+    "name": "Black forest cake",
+    "description": "Everyone loves a rich, chocolaty Black Forest cake crammed with cream, kirsch and cherries. We have taken this traditional recipe and created a gluten-free version so that everyone can tuck in.",
+    "price": 250
   },
   {
     "id": 6,
-    "image": "images/Chocolate.jpg",
+    "image": "http://img.taste.com.au/Dg8mhKFk/taste/2016/11/top-50-cakes-image-4-66318-1.jpg",
     "title": "Business",
-    "description": "left-logo",
-    "name": "Strobary",
+    "description": "Carrot gold — for a vegetable that’s simply tops, you can’t go past this trusty rabbit-magnet!",
+    "name": " Carrot and walnut cake",
     "price": 255
   }
 ]
