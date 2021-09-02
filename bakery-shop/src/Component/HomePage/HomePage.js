@@ -10,12 +10,14 @@ import CandyFlaour from './Candy.json';
 import CakeFlaour from './Cake.json';
 import BreadFlaour from './Bread.json';
 
+// style for card
 const useStyles = makeStyles(() => ({
     root: {
         padding: 20,
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-between',
+//   backgroundImage: 'url("https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmFrZXJ5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80")',
     },
     media: {
         height: 100,
@@ -35,6 +37,26 @@ const ItemWrapper = styled.div`
     background-color: #e9dede;
 `;
 
+const CartButton = styled.div`
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: pink;
+    border: 1px solid;
+    width: 30%;
+    margin: 0 auto;
+    color: steelblue;
+`;
+
+const CardWrapper = styled.div`
+   width: 1000px;
+   @media only screen and (max-width: 768px) {
+     width: 680px;
+   }
+   @media only screen and (max-width: 568px) {
+    width: 100%;
+   }
+`;
+
 function Homepage({ setLoginUser }) {
     const classes = useStyles();
 
@@ -50,6 +72,7 @@ function Homepage({ setLoginUser }) {
         setCart([...cart, el]);
     };
 
+    //remove item from card
     const removeFromCart = (el) => {
         let hardCopy = [...cart];
         hardCopy = hardCopy.filter((cartItem) => cartItem.id !== el.id);
@@ -64,6 +87,7 @@ function Homepage({ setLoginUser }) {
         totalItems();
     }, [cartTotal]);
 
+    // all perticular item(cake, chocolate, bread) selected by the user 
     const total = () => {
         let totalVal = 0;
         for (let i = 0; i < cart.length; i++) {
@@ -72,6 +96,7 @@ function Homepage({ setLoginUser }) {
         setCartTotal(totalVal);
     };
 
+    // all the items selected by the user
     const totalItems = () => {
         let totalVal = 0;
         for (let i = 0; i < cartTotal.length; i++) {
@@ -80,6 +105,7 @@ function Homepage({ setLoginUser }) {
         settotalItem(totalVal);
     };
 
+    // cardmedia card content add to cart
     const cardMedia = (t) => {
         return (
             <>
@@ -143,7 +169,7 @@ function Homepage({ setLoginUser }) {
     };
 
 
-    const Candy = () => {
+    const Chocolate = () => {
         const candies = CandyFlaour;
 
         return (
@@ -157,6 +183,7 @@ function Homepage({ setLoginUser }) {
         );
     };
 
+    // list of all items
     const item = () => {
         return (
             <>
@@ -164,7 +191,7 @@ function Homepage({ setLoginUser }) {
                     <Bread />
                 )}
                 {selectedItem.name === 'Chocolate' && (
-                    <Candy />
+                    <Chocolate />
                 )}
                 {selectedItem.name === 'Cake' && (
                     <Cake />
@@ -173,17 +200,19 @@ function Homepage({ setLoginUser }) {
         )
     };
 
+    //after placed the order
     const PlacedOrder = () => {
         return (
-            <>
-                <Typography variant="body" color="textPrimary" component="p">
+            <div>
+                <Typography variant="h3" color="initial" component="h1">
                     Order is placed
                 </Typography>
                 <button onClick={() => setCheckoutItem(false)}>Cancel</button>
-            </>
+            </div>
         )
     };
 
+    // when order placed delete selected items
     const proccedToPay = () => {
         var arr = [cartTotal];
         var arr1 = arr;
@@ -193,6 +222,7 @@ function Homepage({ setLoginUser }) {
         setorderProceed(true);
     };
 
+    // order procced
     const Checkout = () => {
         return (
             <div className='popup'>
@@ -209,7 +239,10 @@ function Homepage({ setLoginUser }) {
     };
 
     return (
-        <>
+        <CardWrapper>
+        <Typography variant="body" color="Primary" component="h1">
+                    Welcome to Bakery
+                </Typography>
             <Card className={classes.root}>
                 {bakeryItems.map((t) => (
                     <CardGroup>
@@ -228,6 +261,8 @@ function Homepage({ setLoginUser }) {
                     </CardGroup>
                 ))}
             </Card>
+
+             {/* list of item which selected by user  */}
             {selectedItem.name && (
             <ItemWrapper>
                 <Typography variant="body" color="textPrimary" component="h1">
@@ -237,12 +272,12 @@ function Homepage({ setLoginUser }) {
             </ItemWrapper>
             )}
             {cartTotal > 0 && (
-                <div onClick={() => setCheckoutItem(true)}>Cart: {cartTotal}</div>
+                <CartButton onClick={() => setCheckoutItem(true)}>Cart: {cartTotal}</CartButton>
             )}
             {checkoutItem && (
                 <Checkout />
             )}
-        </>
+        </CardWrapper>
     );
 };
 

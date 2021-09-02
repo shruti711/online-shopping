@@ -6,14 +6,14 @@
   display: flex;
   -webkit-box-align: center;
   overflow: hidden;
-  background: rgb(115, 61, 217);
+  background: darkseagreen;
   flex-direction: column;
 }
 
 .Container {
   max-width: 1200px;
-    text-align: center;
-    margin: 0 auto;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .App-header {

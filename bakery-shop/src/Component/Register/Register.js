@@ -22,6 +22,7 @@ const Register = () => {
         })
     }
 
+    // Register You account
     const register = () => {
         const { name, email, password, reEnterPassword } = user
         if( name && email && password && (password === reEnterPassword)){

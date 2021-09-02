@@ -64,7 +64,7 @@ const Menu = () => {
     )
 }
 
-const Burger = ({ open, setOpen }) => {
+const MenuItem = ({ open, setOpen }) => {
     return (
         <button open={open} onClick={() => setOpen(!open)}>
             Menu <i class="arrow right"></i>
@@ -79,7 +79,7 @@ function HeaderBanner() {
     return (
         <div className="App">
             <div className="App-header">
-                <Burger open={open} setOpen={setOpen} />
+                <MenuItem open={open} setOpen={setOpen} />
                 {open && (
                     <Menu open={open} setOpen={setOpen} />
                 )}
